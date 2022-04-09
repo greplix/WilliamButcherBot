@@ -103,7 +103,7 @@ PING_LOCK = Lock()
 
 @app2.on_message(
     filters.command("ping", prefixes=USERBOT_PREFIX)
-    & ~filters.edited
+    & ~filters.edited & filters.me
 )
 @app.on_message(filters.command("ping") & ~filters.edited)
 async def ping_handler(_, message):
